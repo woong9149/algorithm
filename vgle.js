@@ -40,7 +40,6 @@ function solution(n, ladder) {
     return answer;
 }
 
-
 solution(4,[[1,0,1],[0,1,0],[0,0,1],[0,0,0],[1,0,0]]); //출력 4231
 
 
