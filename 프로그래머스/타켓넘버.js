@@ -3,15 +3,15 @@ function solution(numbers, target) {
 
 	dfs(0, 0);
 
-	function dfs(index, sum){
-		if(index === numbers.length) {
+	function dfs(idx, sum){
+		if(idx === numbers.length) {
 			if(sum === target) {
 				answer++;
 			}
 			return;
 		}
-		dfs(index + 1, sum + numbers[index]);
-		dfs(index + 1, sum - numbers[index]);
+		dfs(idx + 1, sum + numbers[idx]);// dfs(1,1) -> dfs(2,2)->dfs(3,3)...dfs(5,5)에서 return을 만나 해당함수를 stack에서 제거하고
+		dfs(idx + 1, sum - numbers[idx]);// dfs(4,4)에서 dfs(4,3) 실행
 	}
 	return answer;
 }
