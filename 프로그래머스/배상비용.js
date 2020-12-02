@@ -8,7 +8,9 @@ function solution(no, works) {
 			let idx = works.indexOf(maxNum);
 			works[idx] = maxNum - 1;
 			no -= 1;
-		}
+		} else {
+            break;
+        }
 	}
 	works.forEach(element => {
 		element *= element;
