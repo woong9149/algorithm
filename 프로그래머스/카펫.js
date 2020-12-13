@@ -1,16 +1,19 @@
 function solution(brown, yellow) {
-	var answer = [];
-
-	for(let horizontal = yellow; horizontal >= 1; horizontal--){
-		let vertical = Math.floor(yellow / horizontal);
-			if(yellow % horizontal == 0 && ((horizontal + 2) * (vertical + 2) == (brown + yellow))){
-				answer.push(horizontal + 2);
-				answer.push(vertical + 2);
-				break;
-			}
+		var answer = [];
+		let divideNum = parseInt(yellow / 8) + 3
+		let horizontal = (brown + yellow) / divideNum;
+		let vertical = (brown + yellow) / horizontal ;
+	
+		if (horizontal >= vertical && brown + yellow === horizontal * vertical) {
+			answer.push(horizontal);
+			answer.push(vertical);
+		} else {
+			
+		}
+		
+		console.log(answer);
+		return answer;
 	}
-	return answer;
-}
 
 solution(10,2);
 solution(8,1);
@@ -36,3 +39,16 @@ solution(24,24);
 	- brown / 2 + 2 = 가로길이 + 세로 길이
 	- yello의 갯수가 ~ 7 => 가로길이 = 전체갯수 /3, yello의 갯수가 8 ~ 15 => 가로길이 = 전체갯수 /4
  */
+// function solution(brown, yellow) {
+// 	var answer = [];
+
+// 	for(let horizontal = yellow; horizontal >= 1; horizontal--){
+// 		let vertical = Math.floor(yellow / horizontal);
+// 			if(yellow % horizontal == 0 && ((horizontal + 2) * (vertical + 2) == (brown + yellow))){
+// 				answer.push(horizontal + 2);
+// 				answer.push(vertical + 2);
+// 				break;
+// 			}
+// 	}
+// 	return answer;
+// }
