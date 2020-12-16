@@ -1,19 +1,18 @@
-function solution(brown, yellow) {
-		var answer = [];
-		let divideNum = parseInt(yellow / 8) + 3
-		let horizontal = (brown + yellow) / divideNum;
-		let vertical = (brown + yellow) / horizontal ;
-	
-		if (horizontal >= vertical && brown + yellow === horizontal * vertical) {
-			answer.push(horizontal);
-			answer.push(vertical);
-		} else {
-			
-		}
-		
-		console.log(answer);
-		return answer;
+const solution = (brown, yellow) => {
+	let answer = [];
+	const width = brown + yellow;
+
+	for (let vertical = 3; vertical <= width; vertical++) {
+			const horizontal = width / vertical;
+			const isInt = width % vertical;
+			if (isInt === 0 && horizontal >= vertical && (horizontal - 2) * (vertical - 2) === yellow) {
+					answer.push(horizontal);
+					answer.push(vertical);
+					break;
+			}
 	}
+	return answer;
+};
 
 solution(10,2);
 solution(8,1);
